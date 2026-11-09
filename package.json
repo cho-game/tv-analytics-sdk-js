@@ -15,9 +15,20 @@
     }
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cho-game/tv-analytics-sdk-js.git"
+  },
+  "homepage": "https://github.com/cho-game/tv-analytics-sdk-js#readme",
+  "bugs": {
+    "url": "https://github.com/cho-game/tv-analytics-sdk-js/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "bun run build:types && bun run build:bundle",
     "build:bundle": "bun build --outfile=dist/index.js --format=esm ./src/index.ts && bun build --outfile=dist/index.cjs --format=cjs ./src/index.ts",
@@ -25,7 +36,8 @@
     "clean": "rm -rf dist",
     "test": "bun test",
     "typecheck": "tsc --noEmit",
-    "prepack": "bun run build"
+    "prepack": "bun run build",
+    "prepublishOnly": "bun test && bun run build"
   },
   "keywords": [
     "analytics",
@@ -37,7 +49,7 @@
     "events",
     "tracking"
   ],
-  "author": "cho-game",
+  "author": "antn9x",
   "license": "MIT",
   "devDependencies": {
     "@types/bun": "latest",

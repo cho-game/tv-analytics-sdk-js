@@ -1,0 +1,34 @@
+# Source & Tests
+src/
+tests/
+__tests__/
+*.test.ts
+*.spec.ts
+
+# Configuration & Tooling
+tsconfig*.json
+bun.lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Git & CI/CD
+.git/
+.github/
+.gitignore
+
+# IDE & Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Environment & Temp
+.env*
+.DS_Store
+Thumbs.db
+*.log
+logs/
+coverage/
+.cache/
+*.tsbuildinfo
