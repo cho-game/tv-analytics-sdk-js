@@ -1,0 +1,47 @@
+{
+  "name": "tv-analytics-sdk-js",
+  "version": "1.0.0",
+  "description": "Cross-platform analytics client SDK for JavaScript & TypeScript (Web, Node.js, Bun, Mobile Web)",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "bun run build:types && bun run build:bundle",
+    "build:bundle": "bun build --outfile=dist/index.js --format=esm ./src/index.ts && bun build --outfile=dist/index.cjs --format=cjs ./src/index.ts",
+    "build:types": "tsc -p tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "prepack": "bun run build"
+  },
+  "keywords": [
+    "analytics",
+    "sdk",
+    "game-analytics",
+    "typescript",
+    "bun",
+    "browser",
+    "events",
+    "tracking"
+  ],
+  "author": "cho-game",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^26.6.6",
+    "typescript": "^5.0.0"
+  }
+}
